@@ -19,6 +19,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     networks:
       - practice-docker-network
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express:
     image: mongo-express:1.0.0-alpha.4
@@ -35,4 +37,8 @@ services:
 
 networks:
   practice-docker-network:
+
+volumes:
+  mongo-data:
+    driver: local
 
